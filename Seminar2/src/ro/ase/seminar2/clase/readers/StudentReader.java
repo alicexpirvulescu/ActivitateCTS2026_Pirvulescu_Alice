@@ -15,23 +15,23 @@ public class StudentReader extends AplicantiReader {
     @Override
     public List<Aplicant> readAplicanti(String file) throws FileNotFoundException {
 
-        Scanner input = new Scanner(new File(file));
-        input.useDelimiter(",|\n");
+        Scanner scanner = new Scanner(new File(file));
+        scanner.useDelimiter(",|\n");
         List<Aplicant> studenti = new ArrayList<>();
 
-        while (input.hasNext()) {
+        while (scanner.hasNext()) {
             Student s = new Student();
 
-            super.citesteAplicant(input,s);
-            int an_studii = input.nextInt();
+            super.citesteAplicant(scanner,s);
+            int an_studii = scanner.nextInt();
             s.setAn_studii(an_studii);
 
-            String facultate = (input.next()).toString();
+            String facultate = (scanner.next()).toString();
             s.setFacultate(facultate);
 
             studenti.add(s);
         }
-        input.close();
+        scanner.close();
         return studenti;
     }
 }

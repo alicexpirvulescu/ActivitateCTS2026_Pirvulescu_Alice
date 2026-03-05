@@ -12,21 +12,21 @@ public class PupilReader extends AplicantiReader {
 
     @Override
     public List<Aplicant> readAplicanti(String file) throws FileNotFoundException {
-        Scanner input2 = new Scanner(new File(file));
-        input2.useDelimiter(",|\n");
+        Scanner scanner = new Scanner(new File(file));
+        scanner.useDelimiter(",|\n");
         List<Aplicant> elevi = new ArrayList<>();
 
-        while (input2.hasNext()) {
+        while (scanner.hasNext()) {
             Elev e = new Elev();
-            super.citesteAplicant(input2,e);
-            int clasa = input2.nextInt();
+            super.citesteAplicant(scanner,e);
+            int clasa = scanner.nextInt();
             e.setClasa(clasa);
-            String tutore = input2.next();
+            String tutore = scanner.next();
             e.setTutore(tutore);
             elevi.add(e);
         }
 
-        input2.close();
+        scanner.close();
         return elevi;
     }
 }

@@ -24,7 +24,7 @@ public class Program {
         listaAngajati = ra.readAplicanti("angajati.txt");
 
         for(Aplicant aplicant:listaAngajati)
-            System.out.println(aplicant.toString());
+            System.out.println(aplicant);
     }
 
 }

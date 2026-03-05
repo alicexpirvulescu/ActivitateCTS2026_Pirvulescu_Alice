@@ -8,23 +8,23 @@ import java.util.Scanner;
 public abstract class AplicantiReader {
     public abstract List<Aplicant> readAplicanti(String file) throws FileNotFoundException;
 
-    public void citesteAplicant(Scanner input, Aplicant aplicant) {
-        String nume = input.next();
+    public void citesteAplicant(Scanner scanner, Aplicant aplicant) {
+        String nume = scanner.next();
         aplicant.setNume(nume);
 
-        String prenume = (input.next()).toString();
+        String prenume = (scanner.next()).toString();
         aplicant.setPrenume(prenume);
 
-        int varsta = Integer.valueOf(input.nextInt());
+        int varsta = Integer.valueOf(scanner.nextInt());
         aplicant.setVarsta(varsta);
 
-        int punctaj = Integer.valueOf(input.nextInt());
+        int punctaj = Integer.valueOf(scanner.nextInt());
         aplicant.setPunctaj(punctaj);
-        int nr = Integer.valueOf(input.nextInt());
-        String[] vect = new String[5];
+        int nr = Integer.valueOf(scanner.nextInt());
+        String[] denumiriProiecte = new String[nr];
         for (int i = 0; i < nr; i++)
-            vect[i] = input.next();
-        aplicant.setNr_proiecte(nr, vect);
+            denumiriProiecte[i] = scanner.next();
+        aplicant.setNr_proiecte(nr, denumiriProiecte);
 
     }
 
