@@ -66,12 +66,17 @@ public class Internare {
 
     @Override
     public String toString() {
-        return "Internare{" +
-                "numePacient='" + numePacient + '\'' +
-                ", patRabatabil=" + patRabatabil +
-                ", micDejun=" + micDejun +
-                ", papuciCamera=" + papuciCamera +
-                ", halat=" + halat +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pacientul ");
+        sb.append(this.numePacient);
+        sb.append(" are pat rabatabil: ");
+        sb.append(this.patRabatabil);
+        sb.append(", mic dejun: ");
+        sb.append(this.micDejun);
+        sb.append(", papuci de camera: ");
+        sb.append(this.papuciCamera);
+        sb.append(" si halat: ");
+        sb.append(this.halat);
+        return sb.toString();
     }
 }
